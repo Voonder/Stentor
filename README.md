@@ -1,5 +1,24 @@
 # Stentor
-Speech Recognizer App
+Speech Recognizer App for Research Project at eXia.CESI
+
+How To
+---
+List of words of the voice control in french :
+* ouvrir application
+* fermer application
+* fermer service
+* retour
+* accueil
+* maintenance
+* paramètres
+* aide et commentaires
+* démarrer
+* précédent
+* suivant
+* répéter
+* stop
+
+You just have to say one of the words quoted above and you can browse into the application.
 
 License
 ---
