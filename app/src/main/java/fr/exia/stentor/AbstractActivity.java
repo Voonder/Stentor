@@ -8,8 +8,8 @@ import fr.exia.stentor.speech.Speaker;
 
 public abstract class AbstractActivity extends Activity {
 
-	Speaker speaker;
 	private final int CHECK_CODE = 0x1;
+	Speaker speaker;
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {

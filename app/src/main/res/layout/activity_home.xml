@@ -7,9 +7,9 @@
 
 	<fr.exia.stentor.component.TextViewRobotoNoto
 		android:id="@+id/blank_fragment_text"
+		style="@style/Text.Display_1"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		style="@style/Text.Display_1"
 		android:gravity="center"
 		android:text="@string/home_welcome"/>
 

@@ -20,6 +20,22 @@ public class Speaker implements TextToSpeech.OnInitListener {
 		tts = new TextToSpeech(context, this);
 	}
 
+	@Override
+	public void onInit(int status) {
+		if (status == TextToSpeech.SUCCESS) {
+			MyPrefs prefs = new MyPrefs(context, MyPrefs.SETTINGS_PREFS);
+
+			if (prefs.getLanguageVoice().equals("EN")) {
+				tts.setLanguage(Locale.ENGLISH);
+			} else {
+				tts.setLanguage(Locale.FRENCH);
+			}
+			ready = true;
+		} else {
+			ready = false;
+		}
+	}
+
 	public void speak(String text) {
 		// Speak only if the TTS is ready and the user has allowed speech
 		if (ready) {
@@ -35,21 +51,5 @@ public class Speaker implements TextToSpeech.OnInitListener {
 
 	public void destroy() {
 		tts.shutdown();
-	}
-
-	@Override
-	public void onInit(int status) {
-		if (status == TextToSpeech.SUCCESS) {
-			MyPrefs prefs = new MyPrefs(context, MyPrefs.SETTINGS_PREFS);
-
-			if (prefs.getLanguageVoice().equals("EN")) {
-				tts.setLanguage(Locale.ENGLISH);
-			} else {
-				tts.setLanguage(Locale.FRENCH);
-			}
-			ready = true;
-		} else {
-			ready = false;
-		}
 	}
 }

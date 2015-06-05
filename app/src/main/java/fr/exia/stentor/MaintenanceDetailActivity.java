@@ -23,6 +23,10 @@ public class MaintenanceDetailActivity extends AbstractActivity {
 
 	private static final String TAG = "MaintenanceDetail";
 
+	MenuItem speechOn;
+	MenuItem speechOff;
+
+	boolean firstPass = true;
 	private TextView txtStep;
 	private Operation operation;
 	private ImageButton btnPrevious;
@@ -30,11 +34,7 @@ public class MaintenanceDetailActivity extends AbstractActivity {
 	private ImageButton btnPlay;
 	private ImageButton btnReplay;
 	private ImageButton btnNext;
-
 	private int positionStep = 0;
-	MenuItem speechOn;
-	MenuItem speechOff;
-	boolean firstPass = true;
 
 	View.OnClickListener onClickListenerPrevious = new View.OnClickListener() {
 		@Override
@@ -170,8 +170,7 @@ public class MaintenanceDetailActivity extends AbstractActivity {
 
 		if (operation.getName().equals("Extincteur")) {
 			layoutBackground.setBackground(getDrawable(R.drawable.photo_extincteurs));
-		}
-		else if(operation.getName().equals("Fontaine")){
+		} else if (operation.getName().equals("Fontaine")) {
 			layoutBackground.setBackground(getDrawable(R.drawable.photo_fontaines));
 		}
 

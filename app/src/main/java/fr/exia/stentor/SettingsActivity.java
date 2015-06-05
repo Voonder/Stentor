@@ -16,7 +16,6 @@ import java.util.List;
 
 import fr.exia.stentor.adapter.SettingsAdapter;
 import fr.exia.stentor.model.ui.SettingsItem;
-import fr.exia.stentor.speech.Speaker;
 import fr.exia.stentor.speech.SpeechActivationService;
 import fr.exia.stentor.speech.SpeechUtils;
 import fr.exia.stentor.util.AppUtils;

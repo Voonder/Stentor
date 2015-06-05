@@ -17,9 +17,9 @@ import fr.exia.stentor.model.Operation;
 
 public class MaintenanceAdapter extends RecyclerView.Adapter<MaintenanceAdapter.ViewHolder> {
 
+	public OnClickOperationItem onClickOperationItem;
 	private List<Operation> operations;
 	private Context context;
-	public OnClickOperationItem onClickOperationItem;
 
 	public MaintenanceAdapter(Context context, List<Operation> operations) {
 		this.context = context;

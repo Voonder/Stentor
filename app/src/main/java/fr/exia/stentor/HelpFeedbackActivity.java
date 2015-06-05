@@ -23,11 +23,10 @@ import fr.exia.stentor.util.AppUtils;
 
 public class HelpFeedbackActivity extends AbstractActivity {
 
-	private List<HelpFeedbackItem> items = new ArrayList<>();
-
 	MenuItem speechOn;
 	MenuItem speechOff;
 	boolean firstPass = true;
+	private List<HelpFeedbackItem> items = new ArrayList<>();
 
 	BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
 		@Override

@@ -19,9 +19,9 @@ import fr.exia.stentor.util.AppUtils;
 
 public class LicenceActivity extends Activity {
 
-	private List<LicenseItem> licenseItems = new ArrayList<>();
 	MenuItem speechOn;
 	MenuItem speechOff;
+	private List<LicenseItem> licenseItems = new ArrayList<>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +61,7 @@ public class LicenceActivity extends Activity {
 		if (AppUtils.isMyServiceRunning(SpeechActivationService.class, this)) {
 			speechOn.setVisible(false);
 			speechOff.setVisible(true);
-		}
-		else {
+		} else {
 			speechOn.setVisible(true);
 			speechOff.setVisible(false);
 		}

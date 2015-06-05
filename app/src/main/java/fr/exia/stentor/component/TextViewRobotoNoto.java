@@ -73,7 +73,7 @@ public class TextViewRobotoNoto extends TextView {
 		return sparseArray;
 	}
 
-	private enum Font{
+	private enum Font {
 		NOTO_BOLD("fonts/NotoSans-Bold.ttf"),
 		NOTO_REGULAR("fonts/NotoSans-Regular.ttf"),
 		ROBOTO_LIGHT("fonts/Roboto-Light.ttf"),

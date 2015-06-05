@@ -7,8 +7,6 @@ import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.speech.RecognitionListener;
@@ -19,7 +17,6 @@ import android.util.Log;
 import java.util.List;
 import java.util.Locale;
 
-import fr.exia.stentor.HomeActivity;
 import fr.exia.stentor.R;
 import fr.exia.stentor.util.MyPrefs;
 
@@ -28,46 +25,20 @@ import fr.exia.stentor.util.MyPrefs;
  * Use {@link Intent}s to start and stop it
  */
 public class SpeechActivationService extends Service {
+
 	private static final String TAG = "SpeechActivationService";
+	/**
+	 * send this when external code wants the Service to stop
+	 */
+	public static final String ACTIVATION_STOP_INTENT_KEY = "ACTIVATION_STOP_INTENT_KEY";
 	public static final String NOTIFICATION_ICON_RESOURCE_INTENT_KEY = "NOTIFICATION_ICON_RESOURCE_INTENT_KEY";
 	public static final String ACTIVATION_TYPE_INTENT_KEY = "ACTIVATION_TYPE_INTENT_KEY";
 	public static final String ACTIVATION_RESULT_INTENT_KEY = "ACTIVATION_RESULT_INTENT_KEY";
 	public static final String ACTIVATION_RESULT_BROADCAST_NAME = "root.gast.playground.speech.ACTIVATION";
 
-	/**
-	 * send this when external code wants the Service to stop
-	 */
-	public static final String ACTIVATION_STOP_INTENT_KEY = "ACTIVATION_STOP_INTENT_KEY";
-
 	public static final int NOTIFICATION_ID = 10298;
-
 	private boolean isStarted;
 	private SpeechRecognizer recognizer;
-
-	public void activated(boolean success) {
-		// make sure the activator is stopped before doing anything else
-		stopActivator();
-
-		// broadcast result
-		Intent intent = new Intent(ACTIVATION_RESULT_BROADCAST_NAME);
-		intent.putExtra(ACTIVATION_RESULT_INTENT_KEY, success);
-		sendBroadcast(intent);
-
-		// always stop after receive an activation
-		stopSelf();
-	}
-
-	public void detectActivation() {
-		recognizeSpeechDirectly();
-	}
-
-	public void stop() {
-		if (getSpeechRecognizer() != null) {
-			getSpeechRecognizer().stopListening();
-			getSpeechRecognizer().cancel();
-			getSpeechRecognizer().destroy();
-		}
-	}
 
 	RecognitionListener recognitionListener = new RecognitionListener() {
 		@Override
@@ -128,18 +99,6 @@ public class SpeechActivationService extends Service {
 		isStarted = false;
 	}
 
-	public static Intent makeStartServiceIntent(Context context, String activationType) {
-		Intent i = new Intent(context, SpeechActivationService.class);
-		i.putExtra(ACTIVATION_TYPE_INTENT_KEY, activationType);
-		return i;
-	}
-
-	public static Intent makeServiceStopIntent(Context context) {
-		Intent i = new Intent(context, SpeechActivationService.class);
-		i.putExtra(ACTIVATION_STOP_INTENT_KEY, true);
-		return i;
-	}
-
 	/**
 	 * stop or start an activator based on the activator type and if an activator is currently running
 	 */
@@ -165,20 +124,62 @@ public class SpeechActivationService extends Service {
 		return START_REDELIVER_INTENT;
 	}
 
-	private void startDetecting(Intent intent) {
-		Log.d(TAG, "extras: " + intent.getExtras().toString());
-		Log.d(TAG, "started");
-		isStarted = true;
-		detectActivation();
-		startForeground(NOTIFICATION_ID, getNotification(intent));
-	}
-
 	@Override
 	public void onDestroy() {
 		Log.d(TAG, "On destroy");
 		super.onDestroy();
 		stopActivator();
 		stopForeground(true);
+	}
+
+	@Override
+	public IBinder onBind(Intent intent) {
+		return null;
+	}
+
+	public static Intent makeStartServiceIntent(Context context, String activationType) {
+		Intent i = new Intent(context, SpeechActivationService.class);
+		i.putExtra(ACTIVATION_TYPE_INTENT_KEY, activationType);
+		return i;
+	}
+
+	public static Intent makeServiceStopIntent(Context context) {
+		Intent i = new Intent(context, SpeechActivationService.class);
+		i.putExtra(ACTIVATION_STOP_INTENT_KEY, true);
+		return i;
+	}
+
+	public void activated(boolean success) {
+		// make sure the activator is stopped before doing anything else
+		stopActivator();
+
+		// broadcast result
+		Intent intent = new Intent(ACTIVATION_RESULT_BROADCAST_NAME);
+		intent.putExtra(ACTIVATION_RESULT_INTENT_KEY, success);
+		sendBroadcast(intent);
+
+		// always stop after receive an activation
+		stopSelf();
+	}
+
+	public void detectActivation() {
+		recognizeSpeechDirectly();
+	}
+
+	public void stop() {
+		if (getSpeechRecognizer() != null) {
+			getSpeechRecognizer().stopListening();
+			getSpeechRecognizer().cancel();
+			getSpeechRecognizer().destroy();
+		}
+	}
+
+	private void startDetecting(Intent intent) {
+		Log.d(TAG, "extras: " + intent.getExtras().toString());
+		Log.d(TAG, "started");
+		isStarted = true;
+		detectActivation();
+		startForeground(NOTIFICATION_ID, getNotification(intent));
 	}
 
 	private void stopActivator() {
@@ -203,11 +204,6 @@ public class SpeechActivationService extends Service {
 				.setContentTitle(title).setContentText(message)
 				.addAction(R.drawable.close, getString(R.string.speech_notification_close), pi);
 		return builder.build();
-	}
-
-	@Override
-	public IBinder onBind(Intent intent) {
-		return null;
 	}
 
 	private void recognizeSpeechDirectly() {
@@ -242,17 +238,16 @@ public class SpeechActivationService extends Service {
 		}
 	}
 
-	private void sendBroadcastReceiver(String s){
+	private void sendBroadcastReceiver(String s) {
 		if (s.contains("opération ")) {
 			Intent intent = new Intent(SpeechUtils.OPERATION);
 			intent.putExtra("NAME", s.replace("opération ", ""));
 			sendBroadcast(intent);
-		}
-		else {
+		} else {
 			switch (s) {
 				case "ouvrir application":
 					Intent intent = new Intent(Intent.ACTION_MAIN);
-					intent.setComponent(new ComponentName("fr.exia.stentor","fr.exia.stentor.HomeActivity"));
+					intent.setComponent(new ComponentName("fr.exia.stentor", "fr.exia.stentor.HomeActivity"));
 					intent.addCategory(Intent.CATEGORY_LAUNCHER);
 					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					startActivity(intent);
@@ -294,13 +289,6 @@ public class SpeechActivationService extends Service {
 					sendBroadcast(new Intent(SpeechUtils.OP_STOP));
 			}
 		}
-	}
-
-	private SpeechRecognizer getSpeechRecognizer() {
-		if (recognizer == null) {
-			recognizer = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
-		}
-		return recognizer;
 	}
 
 	private void recognizeSpeechDirectly(Intent recognizerIntent, RecognitionListener listener, SpeechRecognizer recognizer) {
@@ -348,5 +336,12 @@ public class SpeechActivationService extends Service {
 				break;
 		}
 		return message;
+	}
+
+	private SpeechRecognizer getSpeechRecognizer() {
+		if (recognizer == null) {
+			recognizer = SpeechRecognizer.createSpeechRecognizer(getApplicationContext());
+		}
+		return recognizer;
 	}
 }

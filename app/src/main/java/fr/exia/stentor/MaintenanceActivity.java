@@ -26,11 +26,11 @@ public class MaintenanceActivity extends AbstractActivity {
 
 	private static final String TAG = "MaintenanceActivity";
 
-	private List<Operation> operations = new ArrayList<>();
-
 	MenuItem speechOn;
 	MenuItem speechOff;
+
 	boolean firstPass = true;
+	private List<Operation> operations = new ArrayList<>();
 
 	OnClickOperationItem onClickOperationItem = new OnClickOperationItem() {
 		@Override
@@ -224,7 +224,7 @@ public class MaintenanceActivity extends AbstractActivity {
 	}
 
 	private void loadOperation(String operation) {
-		if(firstPass) {
+		if (firstPass) {
 			Operation op = null;
 			for (Operation s : operations) {
 				if (s.getName().toLowerCase().equals(operation)) {
