@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="8dp"
+	android:layout_marginTop="8dp"
+	android:minHeight="48dp"
+	card_view:cardCornerRadius="4dp">
+
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<ImageView
+			android:id="@+id/item_help_feedback_icon"
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:layout_centerVertical="true"
+			android:layout_marginStart="@dimen/margin_app"
+			android:contentDescription="@string/image_content"
+			android:src="@drawable/library"/>
+
+		<fr.exia.stentor.component.TextViewRobotoNoto
+			android:id="@+id/item_help_feedback_name"
+			style="@style/Text.Body_2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="20dp"
+			android:layout_marginEnd="@dimen/margin_app"
+			android:layout_marginStart="72dp"
+			android:layout_marginTop="@dimen/margin_app"
+			android:text="@string/help_feedback_libraries"/>
+	</RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="8dp"
+	android:layout_marginTop="8dp"
+	android:minHeight="48dp"
+	card_view:cardCornerRadius="4dp">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<fr.exia.stentor.component.TextViewRobotoNoto
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="16dp"
+			android:text="@string/help_feedback_popular"
+			android:textColor="#8A000000"
+			android:textSize="14sp"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<RelativeLayout
+				android:id="@+id/item_help_feedback_plus_layout1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minHeight="48dp"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="28dp"
+					android:layout_height="28dp"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="16dp"
+					android:contentDescription="@string/image_content"
+					android:src="@drawable/file_document_box"/>
+
+				<fr.exia.stentor.component.TextViewRobotoNoto
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="20dp"
+					android:layout_marginEnd="16dp"
+					android:layout_marginStart="72dp"
+					android:layout_marginTop="16dp"
+					android:text="@string/help_feedback_pop1"
+					android:textSize="16sp"/>
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:id="@+id/item_help_feedback_plus_layout2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minHeight="48dp"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="28dp"
+					android:layout_height="28dp"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="16dp"
+					android:contentDescription="@string/image_content"
+					android:src="@drawable/file_document_box"/>
+
+				<fr.exia.stentor.component.TextViewRobotoNoto
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="20dp"
+					android:layout_marginEnd="16dp"
+					android:layout_marginStart="72dp"
+					android:layout_marginTop="16dp"
+					android:text="@string/help_feedback_pop2"
+					android:textSize="16sp"/>
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:id="@+id/item_help_feedback_plus_layout3"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minHeight="48dp"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="28dp"
+					android:layout_height="28dp"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="16dp"
+					android:contentDescription="@string/image_content"
+					android:src="@drawable/file_document_box"/>
+
+				<fr.exia.stentor.component.TextViewRobotoNoto
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="20dp"
+					android:layout_marginEnd="16dp"
+					android:layout_marginStart="72dp"
+					android:layout_marginTop="16dp"
+					android:text="@string/help_feedback_pop3"
+					android:textSize="16sp"/>
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:id="@+id/item_help_feedback_plus_layout4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minHeight="48dp"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="28dp"
+					android:layout_height="28dp"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="16dp"
+					android:contentDescription="@string/image_content"
+					android:src="@drawable/file_document_box"/>
+
+				<fr.exia.stentor.component.TextViewRobotoNoto
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="20dp"
+					android:layout_marginEnd="16dp"
+					android:layout_marginStart="72dp"
+					android:layout_marginTop="16dp"
+					android:text="@string/help_feedback_pop4"
+					android:textSize="16sp"/>
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:id="@+id/item_help_feedback_plus_layout5"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minHeight="48dp"
+				android:orientation="vertical">
+
+				<ImageView
+					android:layout_width="28dp"
+					android:layout_height="28dp"
+					android:layout_centerVertical="true"
+					android:layout_marginStart="16dp"
+					android:contentDescription="@string/image_content"
+					android:src="@drawable/file_document_box"/>
+
+				<fr.exia.stentor.component.TextViewRobotoNoto
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="20dp"
+					android:layout_marginEnd="16dp"
+					android:layout_marginStart="72dp"
+					android:layout_marginTop="16dp"
+					android:text="@string/help_feedback_pop5"
+					android:textSize="16sp"/>
+			</RelativeLayout>
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1px"
+			android:background="#8A000000"/>
+
+		<Button
+			android:id="@+id/item_help_feedback_plus_btn"
+			style="@style/Text.Button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@android:color/transparent"
+			android:gravity="start|center_vertical"
+			android:paddingLeft="@dimen/margin_app"
+			android:paddingRight="@dimen/margin_app"
+			android:text="@string/help_feedback_browse_article"
+			android:textColor="@color/material_drawer_accent"/>
+
+	</LinearLayout>
+
+</android.support.v7.widget.CardView>

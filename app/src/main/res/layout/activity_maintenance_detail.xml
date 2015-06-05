@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				tools:context="fr.exia.stentor.MaintenanceDetailActivity">
+
+	<RelativeLayout
+		android:id="@+id/maintenance_detail_background"
+		android:layout_width="match_parent"
+		android:layout_height="150dp"
+		android:background="@color/black">
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/black_secondary_text"/>
+
+		<fr.exia.stentor.component.TextViewRobotoNoto
+			android:id="@+id/maintenance_detail_title"
+			style="@style/Text.Headline"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_gravity="center|bottom"
+			android:layout_marginBottom="@dimen/margin_app_small"
+			android:layout_marginEnd="@dimen/margin_app"
+			android:layout_marginStart="@dimen/margin_app"
+			android:gravity="center"
+			android:text="New Text"
+			android:textColor="@color/white_text"/>
+	</RelativeLayout>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/linearLayout2"
+		android:layout_below="@+id/maintenance_detail_background">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:paddingBottom="@dimen/margin_app_small"
+			android:paddingLeft="@dimen/margin_app"
+			android:paddingRight="@dimen/margin_app"
+			android:paddingTop="@dimen/margin_app_small">
+
+			<fr.exia.stentor.component.TextViewRobotoNoto
+				android:id="@+id/maintenance_detail_description"
+				style="@style/Text.Title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/maintenance_detail_description"/>
+
+			<fr.exia.stentor.component.TextViewRobotoNoto
+				android:id="@+id/maintenance_detail_description_plus"
+				style="@style/Text.Body_1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/maintenance_detail_description"/>
+
+			<fr.exia.stentor.component.TextViewRobotoNoto
+				android:id="@+id/maintenance_detail_duration"
+				style="@style/Text.Title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/maintenance_detail_duration"/>
+
+			<fr.exia.stentor.component.TextViewRobotoNoto
+				android:id="@+id/maintenance_detail_duration_plus"
+				style="@style/Text.Body_1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/maintenance_detail_duration"/>
+
+			<fr.exia.stentor.component.TextViewRobotoNoto
+				android:id="@+id/maintenance_detail_nb_step"
+				style="@style/Text.Title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/maintenance_detail_nb_step"/>
+
+			<fr.exia.stentor.component.TextViewRobotoNoto
+				android:id="@+id/maintenance_detail_nb_step_plus"
+				style="@style/Text.Body_1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/maintenance_detail_nb_step"/>
+
+			<fr.exia.stentor.component.TextViewRobotoNoto
+				android:id="@+id/maintenance_detail_step"
+				style="@style/Text.Title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/maintenance_detail_step"/>
+
+			<fr.exia.stentor.component.TextViewRobotoNoto
+				android:id="@+id/maintenance_detail_step_plus"
+				style="@style/Text.Body_1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/maintenance_detail_step_detail"
+				android:textColor="@color/material_drawer_accent"/>
+		</LinearLayout>
+	</ScrollView>
+
+	<LinearLayout
+		android:id="@+id/linearLayout2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentStart="true"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:paddingBottom="@dimen/margin_app_small">
+
+		<ImageButton
+			android:id="@+id/maintenance_detail_btn_previous"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/button_height"
+			android:layout_weight="1"
+			android:contentDescription="@string/image_content"
+			android:src="@drawable/skip_previous"/>
+
+		<ImageButton
+			android:id="@+id/maintenance_detail_btn_stop"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/button_height"
+			android:layout_weight="1"
+			android:contentDescription="@string/image_content"
+			android:src="@drawable/stop"/>
+
+		<ImageButton
+			android:id="@+id/maintenance_detail_btn_play"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/button_height"
+			android:layout_weight="1"
+			android:contentDescription="@string/image_content"
+			android:src="@drawable/play"/>
+
+		<ImageButton
+			android:id="@+id/maintenance_detail_btn_replay"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/button_height"
+			android:layout_weight="1"
+			android:contentDescription="@string/image_content"
+			android:src="@drawable/replay"/>
+
+		<ImageButton
+			android:id="@+id/maintenance_detail_btn_next"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/button_height"
+			android:layout_weight="1"
+			android:contentDescription="@string/image_content"
+			android:src="@drawable/skip_next"/>
+	</LinearLayout>
+</RelativeLayout>

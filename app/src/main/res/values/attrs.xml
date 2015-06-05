@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<declare-styleable name="TypographicStyle">
+		<attr name="typoStyle" format="integer">
+			<enum name="noto_bold" value="1"/>
+			<enum name="noto_regular" value="2"/>
+			<enum name="rob_light" value="3"/>
+			<enum name="rob_medium" value="4"/>
+			<enum name="rob_regular" value="5"/>
+		</attr>
+	</declare-styleable>
+
+</resources>

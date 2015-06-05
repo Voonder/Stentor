@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Application name -->
+	<string name="app_name">Stentor</string>
+
+	<!-- Others -->
+	<string name="image_content">Image content</string>
+
+	<!-- Navigation Drawer Items -->
+	<string name="menu_start_service">Démarrage service</string>
+	<string name="menu_stop_service">Arrêt service</string>
+	<string name="menu_home">Acceuil</string>
+	<string name="menu_maintenance">Maintenance</string>
+	<string name="menu_settings">Paramètres</string>
+	<string name="menu_help_feedback">Aide et commentaires</string>
+
+	<!-- Home -->
+	<string name="home_welcome">Bienvenue sur le projet Stentor, projet A4L pour le projet de Recherche &amp; Innovation. \n\n Voix et Reconnaissance vocale</string>
+
+	<!-- Maintenance -->
+	<string name="maintenance_item_hour">%1$dh%2$dm%3$ds</string>
+	<string name="maintenance_item_minute">%1$dm%2$ds</string>
+	<string name="maintenance_item_second">%1$ds</string>
+
+	<!-- Maintenance Details -->
+	<string name="maintenance_detail_description">Description</string>
+	<string name="maintenance_detail_duration">Durée</string>
+	<string name="maintenance_detail_nb_step">Nombre d\'étapes</string>
+	<string name="maintenance_detail_step">Étape</string>
+	<string name="maintenance_detail_step_detail">%1$s - %2$s</string>
+	<string name="maintenance_detail_step_detail_none">Aucune étape active</string>
+
+	<!-- Settings -->
+	<string name="settings_language_app">Langue de l\'application</string>
+	<string name="settings_language_app_info">Langue utilisée pour la visualisation de l\'application.</string>
+	<string name="settings_language_voice">Langue de la voix</string>
+	<string name="settings_language_voice_info">Langue utilisée pour la reconnaissance vocale.</string>
+	<string-array name="settings_language_choose">
+		<item>EN</item>
+		<item>FR</item>
+	</string-array>
+	<string name="settings_restart">Redémarrer l\'application pour changer la langue.</string>
+
+	<!-- Help & Feedback -->
+	<string name="help_feedback_libraries">Librairies</string>
+	<string name="help_feedback_feedback">Commentaire</string>
+	<string name="help_feedback_popular">Populaires</string>
+	<string name="help_feedback_browse_article">Parcourir tous les articles</string>
+	<string name="help_feedback_pop1">Article 1</string>
+	<string name="help_feedback_pop2">Article 2</string>
+	<string name="help_feedback_pop3">Article 3</string>
+	<string name="help_feedback_pop4">Article 4</string>
+	<string name="help_feedback_pop5">Article 5</string>
+
+	<!-- License -->
+	<string name="license_master_mit">Librairie sous licence "The MIT License (MIT)"</string>
+	<string name="license_mit_snackbar"><u><a href="https://github.com/nispok/snackbar">SnackBar</a></u> by Nispok</string>
+	<string name="license_master_apache">Librairies sous licence "The Android Open Source Project, Inc."</string>
+	<string name="license_apache_recycler"><u><a href="https://developer.android.com/tools/support-library/features.html#v7-recyclerview">RecycleView</a></u> by Google</string>
+	<string name="license_apache_cardview"><u><a href="https://developer.android.com/tools/support-library/features.html#v7-cardview">CardView</a></u> by Google</string>
+
+	<!-- TODOList -->
+	<string name="todo_more_info">Plus d\'informations sur le site Internet.</string>
+	<string name="todo_more_help">Lancer plus d\'aide sur le site Internet.</string>
+	<string name="todo_more_feedback">Ouvrir le Google Play Store sur les commentaires.</string>
+
+	<!-- TTS -->
+	<string name="tts_stop_service">Arrêt du service d\'écoute</string>
+	<string name="tts_open_home">Ouverture de la page d\'accueil</string>
+	<string name="tts_open_maintenance">Ouverture de la page de maintenance</string>
+	<string name="tts_open_settings">Ouverture de la page de paramêtres</string>
+	<string name="tts_open_help_feedback">Ouverture de la page d\'aide et commentaires</string>
+	<string name="tts_operation_unknown">Impossible de trouver cette opération</string>
+	<string name="tts_step_stop">Arrêt de l\'écoute des étapes</string>
+	<string name="tts_step_previous_error">Aucune étape précédente</string>
+	<string name="tts_step_next_error">Aucune étape suivante</string>
+
+	<!-- Speech -->
+	<string name="speech_notification_listening">En écoute d\'actions</string>
+	<string name="speech_notification_title">Speech Activation</string>
+	<string name="speech_notification_close">Fermer</string>
+
+</resources>

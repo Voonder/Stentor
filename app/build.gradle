@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+	compile fileTree(include: ['*.jar'], dir: 'libs')
+	compile 'com.nispok:snackbar:2.10.8'
+	compile 'com.android.support:recyclerview-v7:22.1.1'
+	compile 'com.android.support:cardview-v7:22.1.1'
+}
+
+android {
+	compileSdkVersion 22
+	buildToolsVersion '22.0.1'
+
+	signingConfigs {
+		configRelease {
+			keyAlias 'key_release'
+			keyPassword 'stentor4fun'
+			storeFile file('keystore_release.jks')
+			storePassword 'stentor4fun'
+		}
+		configDebug {
+			keyAlias 'key_debug'
+			keyPassword 'stentor4fun'
+			storeFile file('keystore_debug.jks')
+			storePassword 'stentor4fun'
+		}
+	}
+
+	defaultConfig {
+		applicationId "fr.exia.stentor"
+		minSdkVersion 21
+		targetSdkVersion 22
+		versionCode 1
+		versionName "1.0"
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			debuggable false
+			jniDebuggable false
+			renderscriptDebuggable false
+			renderscriptOptimLevel 3
+			zipAlignEnabled true
+			signingConfig signingConfigs.configRelease
+		}
+		debug {
+			debuggable true
+			jniDebuggable false
+			renderscriptDebuggable false
+			renderscriptOptimLevel 3
+			minifyEnabled false
+			zipAlignEnabled true
+			signingConfig signingConfigs.configDebug
+		}
+	}
+
+	aaptOptions {
+		ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~'
+	}
+
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_7
+		targetCompatibility JavaVersion.VERSION_1_7
+	}
+}

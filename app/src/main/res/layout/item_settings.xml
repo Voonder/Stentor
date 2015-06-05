@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="wrap_content"
+			  android:gravity="center"
+			  android:minHeight="48dp"
+			  android:orientation="horizontal"
+			  android:paddingLeft="@dimen/margin_app"
+			  android:paddingRight="@dimen/margin_app">
+
+	<LinearLayout
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:paddingBottom="20dp"
+		android:paddingTop="20dp">
+
+		<fr.exia.stentor.component.TextViewRobotoNoto
+			android:id="@+id/item_setting_name"
+			style="@style/Text.Body_1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="0dp"
+			android:text="@string/settings_language_app"/>
+
+		<fr.exia.stentor.component.TextViewRobotoNoto
+			android:id="@+id/item_setting_description"
+			style="@style/Text.Caption"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:singleLine="true"
+			android:text="@string/settings_language_app_info"/>
+
+	</LinearLayout>
+
+	<Spinner
+		android:id="@+id/item_setting_spinner"
+		android:layout_width="60dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:entries="@array/settings_language_choose"/>
+
+</LinearLayout>
