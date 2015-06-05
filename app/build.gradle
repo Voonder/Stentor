@@ -11,21 +11,6 @@ android {
 	compileSdkVersion 22
 	buildToolsVersion '22.0.1'
 
-	signingConfigs {
-		configRelease {
-			keyAlias 'key_release'
-			keyPassword 'stentor4fun'
-			storeFile file('keystore_release.jks')
-			storePassword 'stentor4fun'
-		}
-		configDebug {
-			keyAlias 'key_debug'
-			keyPassword 'stentor4fun'
-			storeFile file('keystore_debug.jks')
-			storePassword 'stentor4fun'
-		}
-	}
-
 	defaultConfig {
 		applicationId "fr.exia.stentor"
 		minSdkVersion 21
@@ -43,7 +28,6 @@ android {
 			renderscriptDebuggable false
 			renderscriptOptimLevel 3
 			zipAlignEnabled true
-			signingConfig signingConfigs.configRelease
 		}
 		debug {
 			debuggable true
@@ -52,7 +36,6 @@ android {
 			renderscriptOptimLevel 3
 			minifyEnabled false
 			zipAlignEnabled true
-			signingConfig signingConfigs.configDebug
 		}
 	}
 
