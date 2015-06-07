@@ -17,6 +17,7 @@ List of words of the voice control in french :
 * suivant
 * répéter
 * stop
+* opération "name of the object"
 
 You just have to say one of the words quoted above and you can browse into the application.
 
