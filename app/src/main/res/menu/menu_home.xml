@@ -16,6 +16,13 @@
 		android:showAsAction="ifRoom"
 		android:title="@string/menu_stop_service"/>
 
+	<item
+		android:id="@+id/action_list_command"
+		android:icon="@drawable/format_list_bulleted"
+		android:orderInCategory="100"
+		android:showAsAction="ifRoom"
+		android:title="@string/menu_list_command"/>
+
 	<!--<item-->
 	<!--android:id="@+id/action_home"-->
 	<!--android:orderInCategory="100"-->

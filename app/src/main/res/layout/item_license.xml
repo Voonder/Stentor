@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@+id/item_licence_layout"
-			  xmlns:android="http://schemas.android.com/apk/res/android"
-			  android:layout_width="match_parent"
-			  android:layout_height="wrap_content"
-			  android:minHeight="48dp"
-			  android:orientation="vertical"
-			  android:paddingBottom="20dp"
-			  android:paddingEnd="16dp"
-			  android:paddingStart="16dp"
-			  android:paddingTop="16dp">
+<LinearLayout
+	android:id="@+id/item_licence_layout"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:minHeight="48dp"
+	android:orientation="vertical"
+	android:paddingBottom="20dp"
+	android:paddingEnd="16dp"
+	android:paddingStart="16dp"
+	android:paddingTop="16dp">
 
 	<fr.exia.stentor.component.TextViewRobotoNoto
 		android:id="@+id/item_license_name"

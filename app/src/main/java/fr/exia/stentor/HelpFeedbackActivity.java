@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.WindowManager;
 
 import java.util.ArrayList;
@@ -19,12 +18,9 @@ import fr.exia.stentor.interfaces.OnClickLicenseItem;
 import fr.exia.stentor.model.ui.HelpFeedbackItem;
 import fr.exia.stentor.speech.SpeechActivationService;
 import fr.exia.stentor.speech.SpeechUtils;
-import fr.exia.stentor.util.AppUtils;
 
 public class HelpFeedbackActivity extends AbstractActivity {
 
-	MenuItem speechOn;
-	MenuItem speechOff;
 	boolean firstPass = true;
 	private List<HelpFeedbackItem> items = new ArrayList<>();
 
@@ -141,49 +137,8 @@ public class HelpFeedbackActivity extends AbstractActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.menu_help_feedback, menu);
 
-		speechOn = menu.findItem(R.id.action_speech_on);
-		speechOff = menu.findItem(R.id.action_speech_off);
-
-		if (AppUtils.isMyServiceRunning(SpeechActivationService.class, this)) {
-			speechOn.setVisible(false);
-			speechOff.setVisible(true);
-		} else {
-			speechOn.setVisible(true);
-			speechOff.setVisible(false);
-		}
+		checkServieRunning(menu);
 
 		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-
-		switch (id) {
-			case R.id.action_speech_on:
-				startService(SpeechActivationService.makeStartServiceIntent(this, "hello"));
-				speechOn.setVisible(false);
-				speechOff.setVisible(true);
-				break;
-			case R.id.action_speech_off:
-				startService(SpeechActivationService.makeServiceStopIntent(this));
-				speechOn.setVisible(true);
-				speechOff.setVisible(false);
-				break;
-			case R.id.action_home:
-				startActivity(new Intent(this, HomeActivity.class));
-				finish();
-				break;
-			case R.id.action_maintenance:
-				startActivity(new Intent(this, MaintenanceActivity.class));
-				finish();
-				break;
-			case R.id.action_settings:
-				startActivity(new Intent(this, SettingsActivity.class));
-				finish();
-				break;
-		}
-
-		return super.onOptionsItemSelected(item);
 	}
 }

@@ -9,10 +9,33 @@
 	<!-- Navigation Drawer Items -->
 	<string name="menu_start_service">Start Speech Service</string>
 	<string name="menu_stop_service">Stop Speech Service</string>
+	<string name="menu_list_command">Show available command</string>
 	<string name="menu_home">Home</string>
 	<string name="menu_maintenance">Maintenance</string>
 	<string name="menu_settings">Settings</string>
 	<string name="menu_help_feedback">Help &amp; feedback</string>
+
+	<!-- List of available command -->
+	<string name="speech_list_command_title">Available command</string>
+	<string-array name="speech_list_command">
+		<item>ouvrir application</item>
+		<item>fermer application</item>
+		<item>fermer service</item>
+		<item>retour</item>
+		<item>---------------</item>
+		<item>accueil</item>
+		<item>maintenance</item>
+		<item>paramètres</item>
+		<item>aide et commentaires</item>
+		<item>---------------</item>
+		<item>opération \"name of the object\"</item>
+		<item>---------------</item>
+		<item>démarrer</item>
+		<item>précédent</item>
+		<item>suivant</item>
+		<item>répéter</item>
+		<item>stop</item>
+	</string-array>
 
 	<!-- Home -->
 	<string name="home_welcome">Welcome to the Stentor project, A4L project for the project Research and Innovation. \n\n Speech and Voice Recognizer</string>

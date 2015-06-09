@@ -17,7 +17,6 @@ import android.widget.TextView;
 import fr.exia.stentor.model.Operation;
 import fr.exia.stentor.speech.SpeechActivationService;
 import fr.exia.stentor.speech.SpeechUtils;
-import fr.exia.stentor.util.AppUtils;
 
 public class MaintenanceDetailActivity extends AbstractActivity {
 
@@ -236,54 +235,9 @@ public class MaintenanceDetailActivity extends AbstractActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.menu_maintenance_detail, menu);
 
-		speechOn = menu.findItem(R.id.action_speech_on);
-		speechOff = menu.findItem(R.id.action_speech_off);
-
-		if (AppUtils.isMyServiceRunning(SpeechActivationService.class, this)) {
-			speechOn.setVisible(false);
-			speechOff.setVisible(true);
-		} else {
-			speechOn.setVisible(true);
-			speechOff.setVisible(false);
-		}
+		checkServieRunning(menu);
 
 		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-
-		switch (id) {
-			case R.id.action_speech_on:
-				startService(SpeechActivationService.makeStartServiceIntent(this, "hello"));
-				speechOn.setVisible(false);
-				speechOff.setVisible(true);
-				break;
-			case R.id.action_speech_off:
-				startService(SpeechActivationService.makeServiceStopIntent(this));
-				speechOn.setVisible(true);
-				speechOff.setVisible(false);
-				break;
-			case R.id.action_home:
-				startActivity(new Intent(this, HomeActivity.class));
-				finish();
-				break;
-			case R.id.action_maintenance:
-				startActivity(new Intent(this, MaintenanceActivity.class));
-				finish();
-				break;
-			case R.id.action_settings:
-				startActivity(new Intent(this, SettingsActivity.class));
-				finish();
-				break;
-			case R.id.action_help_feedback:
-				startActivity(new Intent(this, HelpFeedbackActivity.class));
-				finish();
-				break;
-		}
-
-		return super.onOptionsItemSelected(item);
 	}
 
 	private void previous() {
