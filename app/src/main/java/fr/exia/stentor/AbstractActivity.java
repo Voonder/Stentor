@@ -61,6 +61,7 @@ public abstract class AbstractActivity extends Activity {
 				finish();
 				break;
 			case R.id.action_maintenance:
+				speaker.speak(getString(R.string.tts_open_maintenance));
 				startActivity(new Intent(this, MaintenanceActivity.class));
 				finish();
 				break;

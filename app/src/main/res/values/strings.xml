@@ -93,6 +93,7 @@
 	<string name="tts_open_maintenance">Open maintenance page</string>
 	<string name="tts_open_settings">Open settings page</string>
 	<string name="tts_open_help_feedback">Open help and feedback page</string>
+	<string name="tts_operation_load">Load operation %s</string>
 	<string name="tts_operation_unknown">Unable to find this operation</string>
 	<string name="tts_step_stop">Stop listening step</string>
 	<string name="tts_step_previous_error">No previous step</string>

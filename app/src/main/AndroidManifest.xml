@@ -17,7 +17,6 @@
 
 		<activity
 			android:name=".HomeActivity"
-			android:configChanges="locale"
 			android:screenOrientation="portrait">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
@@ -26,11 +25,16 @@
 			</intent-filter>
 		</activity>
 
-		<activity android:name=".MaintenanceActivity"/>
-		<activity android:name=".MaintenanceDetailActivity"/>
-		<activity android:name=".SettingsActivity"/>
-		<activity android:name=".HelpFeedbackActivity"/>
-		<activity android:name=".LicenceActivity"/>
+		<activity android:name=".MaintenanceActivity"
+				  android:screenOrientation="portrait"/>
+		<activity android:name=".MaintenanceDetailActivity"
+				  android:screenOrientation="portrait"/>
+		<activity android:name=".SettingsActivity"
+				  android:screenOrientation="portrait"/>
+		<activity android:name=".HelpFeedbackActivity"
+				  android:screenOrientation="portrait"/>
+		<activity android:name=".LicenceActivity"
+				  android:screenOrientation="portrait"/>
 
 		<service
 			android:name=".speech.SpeechActivationService"

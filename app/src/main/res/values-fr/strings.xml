@@ -93,6 +93,7 @@
 	<string name="tts_open_maintenance">Ouverture de la page de maintenance</string>
 	<string name="tts_open_settings">Ouverture de la page de paramêtres</string>
 	<string name="tts_open_help_feedback">Ouverture de la page d\'aide et commentaires</string>
+	<string name="tts_operation_load">Ouverture de l\'operation %s</string>
 	<string name="tts_operation_unknown">Impossible de trouver cette opération</string>
 	<string name="tts_step_stop">Arrêt de l\'écoute des étapes</string>
 	<string name="tts_step_previous_error">Aucune étape précédente</string>

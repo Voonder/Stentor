@@ -31,18 +31,15 @@ public class SpeechActivationService extends Service {
 	public static final String NOTIFICATION_ICON_RESOURCE_INTENT_KEY = "NOTIFICATION_ICON_RESOURCE_INTENT_KEY";
 	public static final String ACTIVATION_TYPE_INTENT_KEY = "ACTIVATION_TYPE_INTENT_KEY";
 	public static final String ACTIVATION_RESULT_INTENT_KEY = "ACTIVATION_RESULT_INTENT_KEY";
-
+	public static final String ACTIVATION_RESULT_BROADCAST_NAME = "root.gast.playground.speech.ACTIVATION";
 	/**
 	 * send this when external code wants the Service to stop
 	 */
 	public static final String ACTIVATION_STOP_INTENT_KEY = "ACTIVATION_STOP_INTENT_KEY";
-	public static final String ACTIVATION_RESULT_BROADCAST_NAME = "ACTIVATION_RESULT_BROADCAST_NAME";
-
 	public static final int NOTIFICATION_ID = 10298;
 	private static final String TAG = "SpeechActivationService";
 	private boolean isStarted;
 	private SpeechRecognizer recognizer;
-	
 	RecognitionListener recognitionListener = new RecognitionListener() {
 		@Override
 		public void onReadyForSpeech(Bundle params) {

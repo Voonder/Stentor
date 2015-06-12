@@ -21,7 +21,6 @@ import fr.exia.stentor.speech.SpeechUtils;
 public class MaintenanceDetailActivity extends AbstractActivity {
 
 	private static final String TAG = "MaintenanceDetail";
-
 	MenuItem speechOn;
 	MenuItem speechOff;
 

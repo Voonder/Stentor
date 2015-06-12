@@ -33,6 +33,7 @@ public class MaintenanceActivity extends AbstractActivity {
 	OnClickOperationItem onClickOperationItem = new OnClickOperationItem() {
 		@Override
 		public void onClickOperationItem(Operation operation) {
+			speaker.speak(getString(R.string.tts_operation_load, operation.getName()));
 			Intent intent = new Intent(getApplicationContext(), MaintenanceDetailActivity.class);
 			intent.putExtra("PARAM_OPERATION", operation);
 			startActivity(intent);
@@ -103,7 +104,6 @@ public class MaintenanceActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-		checkTTS();
 
 		List<String> steps = new ArrayList<>();
 		steps.add("Open");
@@ -117,6 +117,7 @@ public class MaintenanceActivity extends AbstractActivity {
 		stepsFontaine.add("Enlever le capuchon de la réserve pleine");
 		stepsFontaine.add("Insérer la réserve pleine");
 		stepsFontaine.add("Ouvrir l’arrivée d’eau");
+		stepsFontaine.add("Vérifier que vous n'avez rien oublié");
 		stepsFontaine.add("Tester la fontaine a eau");
 		stepsFontaine.add("Fin de la maintenance");
 
@@ -192,6 +193,7 @@ public class MaintenanceActivity extends AbstractActivity {
 
 			if (op != null) {
 				firstPass = false;
+				speaker.speak(getString(R.string.tts_operation_load, op.getName()));
 				Intent intent = new Intent(getApplicationContext(), MaintenanceDetailActivity.class);
 				intent.putExtra("PARAM_OPERATION", op);
 				startActivity(intent);
