@@ -98,6 +98,7 @@
 	<string name="tts_step_stop">Stop listening step</string>
 	<string name="tts_step_previous_error">No previous step</string>
 	<string name="tts_step_next_error">No next step</string>
+	<string name="tts_operation_not_start">Unable to make this command</string>
 
 	<!-- Speech -->
 	<string name="speech_notification_listening">Listening for actions</string>

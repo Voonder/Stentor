@@ -24,6 +24,7 @@ public class MaintenanceDetailActivity extends AbstractActivity {
 	MenuItem speechOn;
 	MenuItem speechOff;
 
+	boolean isStart = false;
 	boolean firstPass = true;
 	private TextView txtStep;
 	private Operation operation;
@@ -121,22 +122,36 @@ public class MaintenanceDetailActivity extends AbstractActivity {
 					finish();
 				}
 			} else if (intent.getAction().equals(SpeechUtils.OP_PREVIOUS)) {
-				if (positionStep != 0) {
-					previous();
+				if (isStart) {
+					if (positionStep != 0) {
+						previous();
+					} else {
+						speaker.speak(getString(R.string.tts_step_previous_error));
+					}
 				} else {
-					speaker.speak(getString(R.string.tts_step_previous_error));
+					speaker.speak(getString(R.string.tts_operation_not_start));
 				}
 			} else if (intent.getAction().equals(SpeechUtils.OP_STOP)) {
+				isStart = false;
 				stop();
 			} else if (intent.getAction().equals(SpeechUtils.OP_LAUNCH)) {
+				isStart = true;
 				play();
 			} else if (intent.getAction().equals(SpeechUtils.OP_REPEAT)) {
-				repeat();
-			} else if (intent.getAction().equals(SpeechUtils.OP_NEXT)) {
-				if (positionStep != operation.getSteps().size() - 1) {
-					next();
+				if (isStart) {
+					repeat();
 				} else {
-					speaker.speak(getString(R.string.tts_step_next_error));
+					speaker.speak(getString(R.string.tts_operation_not_start));
+				}
+			} else if (intent.getAction().equals(SpeechUtils.OP_NEXT)) {
+				if (isStart) {
+					if (positionStep != operation.getSteps().size() - 1) {
+						next();
+					} else {
+						speaker.speak(getString(R.string.tts_step_next_error));
+					}
+				} else {
+					speaker.speak(getString(R.string.tts_operation_not_start));
 				}
 			}
 		}
