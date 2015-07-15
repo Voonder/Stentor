@@ -24,18 +24,18 @@
 			android:paddingRight="@dimen/margin_app"
 			android:paddingTop="20dp">
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/item_maintenance_name"
-				style="@style/Text.Body_1"
+				style="@android:style/TextAppearance.Material.Body1"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="0dp"
 				android:singleLine="true"
 				android:text="@string/settings_language_app"/>
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/item_maintenance_description"
-				style="@style/Text.Caption"
+				style="@android:style/TextAppearance.Material.Caption"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:singleLine="true"
@@ -43,9 +43,9 @@
 
 		</LinearLayout>
 
-		<fr.exia.stentor.component.TextViewRobotoNoto
+		<TextView
 			android:id="@+id/item_maintenance_time"
-			style="@style/Text.Caption"
+			style="@android:style/TextAppearance.Material.Caption"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_alignParentEnd="true"

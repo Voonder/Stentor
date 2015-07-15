@@ -28,10 +28,12 @@ import fr.exia.stentor.util.MyPrefs;
  * Use {@link Intent}s to start and stop it
  */
 public class SpeechActivationService extends Service {
+
 	public static final String NOTIFICATION_ICON_RESOURCE_INTENT_KEY = "NOTIFICATION_ICON_RESOURCE_INTENT_KEY";
 	public static final String ACTIVATION_TYPE_INTENT_KEY = "ACTIVATION_TYPE_INTENT_KEY";
 	public static final String ACTIVATION_RESULT_INTENT_KEY = "ACTIVATION_RESULT_INTENT_KEY";
 	public static final String ACTIVATION_RESULT_BROADCAST_NAME = "root.gast.playground.speech.ACTIVATION";
+
 	/**
 	 * send this when external code wants the Service to stop
 	 */
@@ -40,10 +42,11 @@ public class SpeechActivationService extends Service {
 	private static final String TAG = "SpeechActivationService";
 	private boolean isStarted;
 	private SpeechRecognizer recognizer;
+
 	RecognitionListener recognitionListener = new RecognitionListener() {
 		@Override
 		public void onReadyForSpeech(Bundle params) {
-			Log.d(TAG, "ready for speech " + params);
+			Log.d(TAG, "ready for speech " + params.toString());
 		}
 
 		@Override
@@ -209,13 +212,13 @@ public class SpeechActivationService extends Service {
 	private void recognizeSpeechDirectly() {
 		Intent recognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 
-		MyPrefs prefs = new MyPrefs(getApplicationContext(), MyPrefs.SETTINGS_PREFS);
-		if (prefs.getLanguageVoice().equals("EN")) {
-			recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.US.toString());
-		} else {
-			recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.FRENCH.toString());
-		}
-
+//		MyPrefs prefs = new MyPrefs(getApplicationContext(), MyPrefs.SETTINGS_PREFS);
+//		if (prefs.getLanguageVoice().equals("EN")) {
+//			recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.US.toString());
+//		} else {
+//			recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.FRENCH.toString());
+//		}
+		recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.FRENCH.toString());
 		recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
 		recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5);
 		recognizerIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, false);

@@ -5,8 +5,8 @@
 	xmlns:card_view="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:layout_marginBottom="8dp"
-	android:layout_marginTop="8dp"
+	android:layout_marginBottom="@dimen/margin_app_small"
+	android:layout_marginTop="@dimen/margin_app_small"
 	android:minHeight="48dp"
 	card_view:cardCornerRadius="4dp">
 
@@ -15,15 +15,15 @@
 		android:layout_height="wrap_content"
 		android:orientation="vertical">
 
-		<fr.exia.stentor.component.TextViewRobotoNoto
+		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="8dp"
-			android:layout_marginStart="16dp"
-			android:layout_marginTop="16dp"
+			android:layout_marginBottom="@dimen/margin_app_small"
+			android:layout_marginStart="@dimen/margin_app"
+			android:layout_marginTop="@dimen/margin_app"
 			android:text="@string/help_feedback_popular"
 			android:textColor="#8A000000"
-			android:textSize="14sp"/>
+			style="@android:style/TextAppearance.Material.Body2"/>
 
 		<LinearLayout
 			android:layout_width="match_parent"
@@ -38,22 +38,22 @@
 				android:orientation="vertical">
 
 				<ImageView
-					android:layout_width="28dp"
-					android:layout_height="28dp"
+					android:layout_width="@dimen/icon_size"
+					android:layout_height="@dimen/icon_size"
 					android:layout_centerVertical="true"
-					android:layout_marginStart="16dp"
+					android:layout_marginStart="@dimen/margin_app"
 					android:contentDescription="@string/image_content"
 					android:src="@drawable/file_document_box"/>
 
-				<fr.exia.stentor.component.TextViewRobotoNoto
+				<TextView
+					style="@android:style/TextAppearance.Material.Medium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginBottom="20dp"
-					android:layout_marginEnd="16dp"
+					android:layout_marginEnd="@dimen/margin_app"
 					android:layout_marginStart="72dp"
-					android:layout_marginTop="16dp"
-					android:text="@string/help_feedback_pop1"
-					android:textSize="16sp"/>
+					android:layout_marginTop="@dimen/margin_app"
+					android:text="@string/help_feedback_pop1"/>
 			</RelativeLayout>
 
 			<RelativeLayout
@@ -64,22 +64,22 @@
 				android:orientation="vertical">
 
 				<ImageView
-					android:layout_width="28dp"
-					android:layout_height="28dp"
+					android:layout_width="@dimen/icon_size"
+					android:layout_height="@dimen/icon_size"
 					android:layout_centerVertical="true"
-					android:layout_marginStart="16dp"
+					android:layout_marginStart="@dimen/margin_app"
 					android:contentDescription="@string/image_content"
 					android:src="@drawable/file_document_box"/>
 
-				<fr.exia.stentor.component.TextViewRobotoNoto
+				<TextView
+					style="@android:style/TextAppearance.Material.Medium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginBottom="20dp"
-					android:layout_marginEnd="16dp"
+					android:layout_marginEnd="@dimen/margin_app"
 					android:layout_marginStart="72dp"
-					android:layout_marginTop="16dp"
-					android:text="@string/help_feedback_pop2"
-					android:textSize="16sp"/>
+					android:layout_marginTop="@dimen/margin_app"
+					android:text="@string/help_feedback_pop2"/>
 			</RelativeLayout>
 
 			<RelativeLayout
@@ -90,22 +90,22 @@
 				android:orientation="vertical">
 
 				<ImageView
-					android:layout_width="28dp"
-					android:layout_height="28dp"
+					android:layout_width="@dimen/icon_size"
+					android:layout_height="@dimen/icon_size"
 					android:layout_centerVertical="true"
-					android:layout_marginStart="16dp"
+					android:layout_marginStart="@dimen/margin_app"
 					android:contentDescription="@string/image_content"
 					android:src="@drawable/file_document_box"/>
 
-				<fr.exia.stentor.component.TextViewRobotoNoto
+				<TextView
+					style="@android:style/TextAppearance.Material.Medium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginBottom="20dp"
-					android:layout_marginEnd="16dp"
+					android:layout_marginEnd="@dimen/margin_app"
 					android:layout_marginStart="72dp"
-					android:layout_marginTop="16dp"
-					android:text="@string/help_feedback_pop3"
-					android:textSize="16sp"/>
+					android:layout_marginTop="@dimen/margin_app"
+					android:text="@string/help_feedback_pop3"/>
 			</RelativeLayout>
 
 			<RelativeLayout
@@ -116,22 +116,22 @@
 				android:orientation="vertical">
 
 				<ImageView
-					android:layout_width="28dp"
-					android:layout_height="28dp"
+					android:layout_width="@dimen/icon_size"
+					android:layout_height="@dimen/icon_size"
 					android:layout_centerVertical="true"
-					android:layout_marginStart="16dp"
+					android:layout_marginStart="@dimen/margin_app"
 					android:contentDescription="@string/image_content"
 					android:src="@drawable/file_document_box"/>
 
-				<fr.exia.stentor.component.TextViewRobotoNoto
+				<TextView
+					style="@android:style/TextAppearance.Material.Medium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginBottom="20dp"
-					android:layout_marginEnd="16dp"
+					android:layout_marginEnd="@dimen/margin_app"
 					android:layout_marginStart="72dp"
-					android:layout_marginTop="16dp"
-					android:text="@string/help_feedback_pop4"
-					android:textSize="16sp"/>
+					android:layout_marginTop="@dimen/margin_app"
+					android:text="@string/help_feedback_pop4"/>
 			</RelativeLayout>
 
 			<RelativeLayout
@@ -142,33 +142,32 @@
 				android:orientation="vertical">
 
 				<ImageView
-					android:layout_width="28dp"
-					android:layout_height="28dp"
+					android:layout_width="@dimen/icon_size"
+					android:layout_height="@dimen/icon_size"
 					android:layout_centerVertical="true"
-					android:layout_marginStart="16dp"
+					android:layout_marginStart="@dimen/margin_app"
 					android:contentDescription="@string/image_content"
 					android:src="@drawable/file_document_box"/>
 
-				<fr.exia.stentor.component.TextViewRobotoNoto
+				<TextView
+					style="@android:style/TextAppearance.Material.Medium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginBottom="20dp"
-					android:layout_marginEnd="16dp"
+					android:layout_marginEnd="@dimen/margin_app"
 					android:layout_marginStart="72dp"
-					android:layout_marginTop="16dp"
-					android:text="@string/help_feedback_pop5"
-					android:textSize="16sp"/>
+					android:layout_marginTop="@dimen/margin_app"
+					android:text="@string/help_feedback_pop5"/>
 			</RelativeLayout>
 		</LinearLayout>
 
 		<View
 			android:layout_width="match_parent"
-			android:layout_height="1px"
-			android:background="#8A000000"/>
+			android:layout_height="1dp"
+			android:background="@color/black_secondary_text"/>
 
 		<Button
 			android:id="@+id/item_help_feedback_plus_btn"
-			style="@style/Text.Button"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@android:color/transparent"

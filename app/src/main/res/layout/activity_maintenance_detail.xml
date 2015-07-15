@@ -7,7 +7,7 @@
 	<RelativeLayout
 		android:id="@+id/maintenance_detail_background"
 		android:layout_width="match_parent"
-		android:layout_height="150dp"
+		android:layout_height="@dimen/image_top_height"
 		android:background="@color/black">
 
 		<View
@@ -15,9 +15,9 @@
 			android:layout_height="match_parent"
 			android:background="@color/black_secondary_text"/>
 
-		<fr.exia.stentor.component.TextViewRobotoNoto
+		<TextView
 			android:id="@+id/maintenance_detail_title"
-			style="@style/Text.Headline"
+			style="@android:style/TextAppearance.Material.Headline"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_alignParentBottom="true"
@@ -45,58 +45,66 @@
 			android:paddingRight="@dimen/margin_app"
 			android:paddingTop="@dimen/margin_app_small">
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/maintenance_detail_description"
-				style="@style/Text.Title"
+				style="@android:style/TextAppearance.Material.Title"
+				android:layout_marginBottom="@dimen/margin_app_small"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/maintenance_detail_description"/>
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/maintenance_detail_description_plus"
-				style="@style/Text.Body_1"
+				style="@android:style/TextAppearance.Material.Body1"
+				android:layout_marginBottom="@dimen/margin_app"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/maintenance_detail_description"/>
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/maintenance_detail_duration"
-				style="@style/Text.Title"
+				style="@android:style/TextAppearance.Material.Title"
+				android:layout_marginBottom="@dimen/margin_app_small"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/maintenance_detail_duration"/>
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/maintenance_detail_duration_plus"
-				style="@style/Text.Body_1"
+				style="@android:style/TextAppearance.Material.Body1"
+				android:layout_marginBottom="@dimen/margin_app"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/maintenance_detail_duration"/>
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/maintenance_detail_nb_step"
-				style="@style/Text.Title"
+				style="@android:style/TextAppearance.Material.Title"
+				android:layout_marginBottom="@dimen/margin_app_small"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/maintenance_detail_nb_step"/>
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/maintenance_detail_nb_step_plus"
-				style="@style/Text.Body_1"
+				style="@android:style/TextAppearance.Material.Body1"
+				android:layout_marginBottom="@dimen/margin_app"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/maintenance_detail_nb_step"/>
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/maintenance_detail_step"
-				style="@style/Text.Title"
+				style="@android:style/TextAppearance.Material.Title"
+				android:layout_marginBottom="@dimen/margin_app_small"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/maintenance_detail_step"/>
 
-			<fr.exia.stentor.component.TextViewRobotoNoto
+			<TextView
 				android:id="@+id/maintenance_detail_step_plus"
-				style="@style/Text.Body_1"
+				style="@android:style/TextAppearance.Material.Body1"
+				android:layout_marginBottom="@dimen/margin_app"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/maintenance_detail_step_detail"

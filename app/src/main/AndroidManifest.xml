@@ -38,8 +38,7 @@
 
 		<service
 			android:name=".speech.SpeechActivationService"
-			android:exported="true"
-			android:permission="true"/>
+			android:exported="true"/>
 
 		<receiver android:name=".receiver.SpeechServiceReceiver">
 			<intent-filter>

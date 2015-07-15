@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-	compile fileTree(include: ['*.jar'], dir: 'libs')
-	compile 'com.nispok:snackbar:2.10.8'
 	compile 'com.android.support:recyclerview-v7:22.1.1'
 	compile 'com.android.support:cardview-v7:22.1.1'
+	compile 'com.nispok:snackbar:2.10.8'
 }
 
 android {
 	compileSdkVersion 22
-	buildToolsVersion '22.0.1'
+	buildToolsVersion '23.0.0 rc3'
 
 	defaultConfig {
 		applicationId "fr.exia.stentor"
@@ -32,7 +31,7 @@ android {
 		debug {
 			debuggable true
 			jniDebuggable false
-			renderscriptDebuggable false
+			renderscriptDebuggable true
 			renderscriptOptimLevel 3
 			minifyEnabled false
 			zipAlignEnabled true

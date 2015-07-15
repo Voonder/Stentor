@@ -13,20 +13,20 @@
 		android:layout_height="wrap_content"
 		android:layout_weight="1"
 		android:orientation="vertical"
-		android:paddingBottom="20dp"
-		android:paddingTop="20dp">
+		android:paddingBottom="@dimen/margin_app"
+		android:paddingTop="@dimen/margin_app">
 
-		<fr.exia.stentor.component.TextViewRobotoNoto
+		<TextView
 			android:id="@+id/item_setting_name"
-			style="@style/Text.Body_1"
+			style="@android:style/TextAppearance.Material.Body1"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="0dp"
 			android:text="@string/settings_language_app"/>
 
-		<fr.exia.stentor.component.TextViewRobotoNoto
+		<TextView
 			android:id="@+id/item_setting_description"
-			style="@style/Text.Caption"
+			style="@android:style/TextAppearance.Material.Caption"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:singleLine="true"

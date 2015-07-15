@@ -5,9 +5,9 @@
 				android:padding="@dimen/margin_app"
 				tools:context="fr.exia.stentor.HomeActivity">
 
-	<fr.exia.stentor.component.TextViewRobotoNoto
+	<TextView
 		android:id="@+id/blank_fragment_text"
-		style="@style/Text.Display_1"
+		style="@android:style/TextAppearance.Material.Display1"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="center"

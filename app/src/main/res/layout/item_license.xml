@@ -4,16 +4,16 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:minHeight="48dp"
+	android:minHeight="@dimen/item_min_height"
 	android:orientation="vertical"
 	android:paddingBottom="20dp"
-	android:paddingEnd="16dp"
-	android:paddingStart="16dp"
-	android:paddingTop="16dp">
+	android:paddingEnd="@dimen/margin_app"
+	android:paddingStart="@dimen/margin_app"
+	android:paddingTop="@dimen/margin_app">
 
-	<fr.exia.stentor.component.TextViewRobotoNoto
+	<TextView
 		android:id="@+id/item_license_name"
-		style="@style/Text.Body_2"
+		style="@android:style/TextAppearance.Material.Body1"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/license_master_mit"
